@@ -1,4 +1,4 @@
-name: Build GmsCore
+name: Build MicroG
 
 on:
   workflow_dispatch:
@@ -6,7 +6,7 @@ on:
   - cron: "0 * * * *"
 
 jobs:
-  start_building_gmscore:
+  start_building_microg:
     runs-on: ubuntu-22.04
     permissions: write-all
     steps:
@@ -42,20 +42,20 @@ jobs:
           GITHUB_REPOSITORY: $GITHUB_REPOSITORY
           NEXT_VER_CODE: ${{ steps.next_ver_code.outputs.NEXT_VER_CODE }}
 
-    - name: Release Gmscore
+    - name: Release MicroG
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: ./prebuilt/*
         tag: ${{ steps.next_ver_code.outputs.NEXT_VER_CODE }}
         overwrite: true
-        body: "ReVanced GmsCore Release Synced With MicroG Services"
+        body: "MicroG Release Synced With MicroG Services"
         file_glob: true
     - name: Actions Ntfy
       run: |
         curl \
         -u ${{ secrets.NTFY_CRED }} \
-        -H "Title: Revanced GmsCore Is Updated" \
+        -H "Title: MicroG Is Updated" \
         -H "Content-Type: text/plain" \
         -d $'Repo: ${{ github.repository }}\nCommit: ${{ github.sha }}\nRef: ${{ github.ref }}\nStatus: ${{ job.status}}' \
         ${{ secrets.NTFY_URL }}

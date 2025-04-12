@@ -3,10 +3,8 @@ name: Submodule updates
 on:
   workflow_dispatch:
   schedule:
-  - cron: "0 11,12,13 * * *"
-  push:
-    branches: 
-      - main
+  - cron: "0 * * * *"
+  
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -28,7 +26,7 @@ jobs:
         run: |
           curl \
           -u ${{ secrets.NTFY_CRED }} \
-          -H "Title: Revanced GmsCore's Submodules Is Updated" \
+          -H "Title: Microg's Submodules Is Updated" \
           -H "Content-Type: text/plain" \
           -d $'Repo: ${{ github.repository }}\nCommit: ${{ github.sha }}\nRef: ${{ github.ref }}\nStatus: ${{ job.status}}' \
           ${{ secrets.NTFY_URL }}

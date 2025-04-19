@@ -4,7 +4,7 @@
 
 1. install any microg module (magisk or twrp)
 
-2. Install Lsposed Module Fakegapps or [XSpoofSignatures-Legends](https://github.com/Lobanokivan11/XSpoofSignatures-Legends) enable and reboot.
+2. Install Lsposed Module Fakegapps or 1 of These modules For Spoof Signature Permission Grant [XSpoofSignatures-Legends](https://github.com/Lobanokivan11/XSpoofSignatures-Legends) or [XSpoofSignatures](https://github.com/rushiiMachine/XSpoofSignatures) enable and reboot.
 
 3. Download And install ```gmscore-original.apk``` as update
 

@@ -12,9 +12,9 @@
 
 3. Enter Google Accounts and login into Google Account as always
 
-4. (Optional) Download 
+4. (Optional) Download and install ```vending-original.apk``` as google play replacement.
 
-6. That's All.
+5. That's All.
 
 ## How to Install (Huawei)
 

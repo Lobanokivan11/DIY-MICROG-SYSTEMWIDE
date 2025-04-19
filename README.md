@@ -20,8 +20,10 @@
 
 1. Download And install ```gmscore-huawei.apk```
 
-2. Open Revanced Gmscore Settings(MicroG Settings) Enter Self-check page And Grant All Permission Excluding Spoof Signature Permission (This Not Required).
+2. Open Revanced  MicroG Settings Enter Self-check page And Grant All Permission
 
 3. Enter Google Accounts and login into Google Account as always
 
-6. That's All, Install Youtube ReVanced or anything Youtube With Other Revanced patches you want Open it and gongratulations You may watch Any Videos From Youtube.
+4. Download and install ```vending-huawei.apk``` as google play replacement (Yes Google Play Officially Doesn't work on Huawei)
+
+5. That's All

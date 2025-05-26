@@ -1,4 +1,5 @@
 sudo apt update
+sudo apt upgrade -y
 sudo apt install git git-lfs zipalign apksigner
 sudo git lfs install
 git submodule update --init --recursive

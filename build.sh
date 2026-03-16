@@ -6,25 +6,30 @@ git clone https://github.com/microg/GmsCore.git input
 cd input
 cp -r ../profiles/*.xml play-services-core/src/main/res/xml
 export GRADLE_MICROG_VERSION_WITHOUT_GIT=0
-./gradlew --no-daemon --stacktrace :play-services-core:assembleMapboxDefault :play-services-core:assembleMapboxHuawei :vending-app:assembledefault :vending-app:assemblehuawei
+./gradlew --no-daemon --stacktrace :play-services-core:assembleMapboxUserRelease :play-services-core:assembleMapboxDefault :play-services-core:assembleMapboxHuawei :vending-app:assembledefault :vending-app:assemblehuawei
 mkdir ../outputog
 mkdir ../outputhw
 mkdir ../outputoggp
 mkdir ../outputhwgp
+mkdir ../outputuser
 cp vending-app/build/outputs/apk/default/release/*.apk ../outputoggp
 cp vending-app/build/outputs/apk/huawei/release/*.apk  ../outputhwgp
 cp play-services-core/build/outputs/apk/mapboxDefault/release/*.apk ../outputog
 cp play-services-core/build/outputs/apk/mapboxHuawei/release/*.apk ../outputhw
+cp play-services-core/build/outputs/apk/mapboxUser/release/*.apk ../outputuser
 zipalign -p 4 ../outputog/*.apk ../outputog/aligned.apk
 zipalign -p 4 ../outputhw/*.apk ../outputhw/aligned.apk
+zipalign -p 4 ../outputuser/*.apk ../outputuser/aligned.apk
 zipalign -p 4 ../outputoggp/*.apk ../outputoggp/aligned.apk
 zipalign -p 4 ../outputhwgp/*.apk ../outputhwgp/aligned.apk
 apksigner sign --ks-key-alias lob --ks ../sign.keystore --ks-pass pass:369852 --key-pass pass:369852 ../outputog/aligned.apk
 apksigner sign --ks-key-alias lob --ks ../sign.keystore --ks-pass pass:369852 --key-pass pass:369852 ../outputhw/aligned.apk
+apksigner sign --ks-key-alias lob --ks ../sign.keystore --ks-pass pass:369852 --key-pass pass:369852 ../outputuser/aligned.apk
 apksigner sign --ks-key-alias lob --ks ../sign.keystore --ks-pass pass:369852 --key-pass pass:369852 ../outputoggp/aligned.apk
 apksigner sign --ks-key-alias lob --ks ../sign.keystore --ks-pass pass:369852 --key-pass pass:369852 ../outputhwgp/aligned.apk
 mkdir ../prebuilt
 cp ../outputhw/aligned.apk ../prebuilt/gmscore-huawei.apk
 cp ../outputog/aligned.apk ../prebuilt/gmscore-original.apk
+cp ../outputuser/aligned.apk ../prebuilt/gmscore-user.apk
 cp ../outputhwgp/aligned.apk ../prebuilt/vending-huawei.apk
 cp ../outputoggp/aligned.apk ../prebuilt/vending-original.apk

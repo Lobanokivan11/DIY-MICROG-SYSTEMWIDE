@@ -12,7 +12,7 @@
 
 3. Enter Google Accounts and login into Google Account as always
 
-4. (Optional) Download and install ```vending-original.apk``` as google play replacement.
+4. Download and install ```vending-original.apk``` as google play replacement (official google play didn't tested but may work).
 
 5. That's All.
 
